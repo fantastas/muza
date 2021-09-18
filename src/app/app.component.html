@@ -2,6 +2,8 @@
   <h1>Mano muzika</h1>
 </a>
 
+
+
 <ul>
   <li *ngFor="let file of files" (click)="openFile(file.url)">{{file.name}}</li>
 </ul>
@@ -14,7 +16,7 @@
 
 <div>
 <span> {{currentTime}} </span>  
-<input type="range" min="0" max="{{endseek}}" [value]="seek" >
+<input type="range" min="0" max="{{endseek}}" [value]="seek" (input)="setSeekTo($event)">
 <span> {{duration}} </span>  
 
 </div>

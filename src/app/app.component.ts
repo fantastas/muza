@@ -92,6 +92,7 @@ export class AppComponent {
       return () => {
         this.audioObj.pause();
         this.audioObj.currentTime =0;
+        this.removeEvent(this.audioObj, this.audioEvents, handler);
       }
     })
   }
@@ -104,13 +105,19 @@ export class AppComponent {
   }
 
   removeEvent(obj:any, events:any, handler:any){
-
+    events.forEach((event: any) => {
+      obj.removeEventListener(event, handler);
+    });
   }
 
   timeFormat(time:any, format="HH:mm:ss"){
     const momentTime = time * 1000;
     return moment.utc(momentTime).format(format);
 
+  }
+
+  setSeekTo(ev:any){
+    this.audioObj.currentTime = ev.target.value;
   }
 
 }
