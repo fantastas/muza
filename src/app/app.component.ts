@@ -26,25 +26,17 @@ export class AppComponent {
   play(){
     console.log('play');
     this.audioObj.play();
-    
-
   }
 
   pause(){
     console.log('pause');
     this.audioObj.pause();
-
-
-
   }
 
   stop(){
     console.log('stop');
     this.audioObj.pause();
     this.audioObj.currentTime = 0;
-
-
-
   }
 
   openFile(url:any){
@@ -52,8 +44,6 @@ export class AppComponent {
     this.audioObj.load();
     this.audioObj.play();
     console.log(url);
-    
-
-
   }  
+  
 }
