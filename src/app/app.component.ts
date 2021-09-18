@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-root',
@@ -36,8 +37,10 @@ export class AppComponent {
   
   ];
 
-  currentTime = 0;
-  duration = 0;
+  currentTime = '00:00:00';
+  duration = '00:00:00';
+  seek = 0;
+  endseek = 0;
 
   play(){
     console.log('play');
@@ -76,8 +79,11 @@ export class AppComponent {
 
       const handler = (event: Event) =>{
         console.log(event);
-        this.duration = this.audioObj.duration;
-        this.currentTime = this.audioObj.currentTime;
+        this.seek = this.audioObj.currentTime;
+        this.endseek = this.audioObj.duration;
+        this.duration = this.timeFormat(this.audioObj.duration);
+        this.currentTime = this.timeFormat(this.audioObj.currentTime);
+
         
       }
 
@@ -101,7 +107,9 @@ export class AppComponent {
 
   }
 
-  timeFormat(time:any, format="hh:mm:ss"){
+  timeFormat(time:any, format="HH:mm:ss"){
+    const momentTime = time * 1000;
+    return moment.utc(momentTime).format(format);
 
   }
 
