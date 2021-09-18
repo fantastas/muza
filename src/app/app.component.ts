@@ -45,5 +45,11 @@ export class AppComponent {
     this.audioObj.play();
     console.log(url);
   }  
-  
+
+  setVolume(ev:any){
+    this.audioObj.volume = ev.target.value;
+    console.log(ev.target.value);
+    
+  }
+
 }

@@ -6,7 +6,12 @@
   <li *ngFor="let file of files" (click)="openFile(file.url)">{{file.name}}</li>
 </ul>
 
-
+<div>
 <button (click)="play()">Play</button>
 <button (click)="pause()">Pause</button>
 <button (click)="stop()">Stop</button>
+</div>
+
+<div>
+  <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
+</div>
