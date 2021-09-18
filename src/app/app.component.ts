@@ -43,17 +43,14 @@ export class AppComponent {
   endseek = 0;
 
   play(){
-    console.log('play');
     this.audioObj.play();
   }
 
   pause(){
-    console.log('pause');
     this.audioObj.pause();
   }
 
   stop(){
-    console.log('stop');
     this.audioObj.pause();
     this.audioObj.currentTime = 0;
   }
@@ -66,7 +63,7 @@ export class AppComponent {
 
   setVolume(ev:any){
     this.audioObj.volume = ev.target.value;
-    console.log(ev.target.value);
+    // console.log(ev.target.value);
     
   }
 
@@ -78,7 +75,7 @@ export class AppComponent {
       this.audioObj.play();
 
       const handler = (event: Event) =>{
-        console.log(event);
+        // console.log(event);
         this.seek = this.audioObj.currentTime;
         this.endseek = this.audioObj.duration;
         this.duration = this.timeFormat(this.audioObj.duration);
