@@ -2,9 +2,11 @@
   <h1>Mano muzika</h1>
 </a>
 
+<ul>
+  <li *ngFor="let file of files" (click)="openFile(file.url)">{{file.name}}</li>
+</ul>
 
-<ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false" 
-    muted="muted" [displayPlaylist]="msaapDisplayPlayList" [pageSizeOptions]="pageSizeOptions" (trackEnded)="onEnded($event)"
-        [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
-        [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist" 
-        [displayDuration]="msaapDisplayDuration" [expanded]="true"></ngx-audio-player> 
+
+<button (click)="play()">Play</button>
+<button (click)="pause()">Pause</button>
+<button (click)="stop()">Stop</button>
