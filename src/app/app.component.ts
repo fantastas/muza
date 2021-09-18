@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,18 @@ export class AppComponent {
   
 
   audioObj = new Audio();
+
+  audioEvents = [
+     "ended",
+     "error",
+     "play",
+     "playing",
+     "pause",
+     "timeupdate",
+     "canplay",
+     "loadedmetadata",
+     "loadstart"
+  ];
   
   files = 
   [{
@@ -22,6 +35,9 @@ export class AppComponent {
   }
   
   ];
+
+  currentTime = 0;
+  duration = 0;
 
   play(){
     console.log('play');
@@ -40,16 +56,53 @@ export class AppComponent {
   }
 
   openFile(url:any){
-    this.audioObj.src = url;
-    this.audioObj.load();
-    this.audioObj.play();
-    console.log(url);
+    this.streamObserver(url).subscribe(event =>{
+
+    });
   }  
 
   setVolume(ev:any){
     this.audioObj.volume = ev.target.value;
     console.log(ev.target.value);
     
+  }
+
+  streamObserver(url:any){
+    return new Observable(observer =>{
+      
+      this.audioObj.src = url;
+      this.audioObj.load();
+      this.audioObj.play();
+
+      const handler = (event: Event) =>{
+        console.log(event);
+        this.duration = this.audioObj.duration;
+        this.currentTime = this.audioObj.currentTime;
+        
+      }
+
+      this.addEvent(this.audioObj, this.audioEvents, handler);
+
+      return () => {
+        this.audioObj.pause();
+        this.audioObj.currentTime =0;
+      }
+    })
+  }
+
+  addEvent(obj:any, events:any, handler:any){
+    events.forEach((event: any) => {
+      obj.addEventListener(event, handler);
+    });
+
+  }
+
+  removeEvent(obj:any, events:any, handler:any){
+
+  }
+
+  timeFormat(time:any, format="hh:mm:ss"){
+
   }
 
 }
