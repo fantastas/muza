@@ -49,6 +49,10 @@ export class AppComponent {
   seek = 0;
   endseek = 0;
   fileName: string= '';
+  shuffle = false;
+  index = 0;
+
+  
 
   play(){
     this.audioObj.play();
@@ -83,11 +87,26 @@ export class AppComponent {
       this.audioObj.load();
       this.audioObj.play();
       
+      // current song loop
       this.files.forEach(element => {
         if(url == element.url){
           this.fileName = element.name;
         }
       });
+
+
+      // no shuffle loop
+      var i = 0;
+      this.files.forEach(element => {
+        if(url == element.url){
+           this.index = i + 1;
+        }
+        i++;
+      });
+      
+      if(this.index == this.files.length){
+        this.index = 0;
+      }
 
       const handler = (event: Event) =>{
         // console.log(event);
@@ -96,12 +115,15 @@ export class AppComponent {
         this.duration = this.timeFormat(this.audioObj.duration);
         this.currentTime = this.timeFormat(this.audioObj.currentTime);
 
-        if(this.audioObj.currentTime == this.audioObj.duration){
+        // shufle is on
+        if(this.audioObj.currentTime == this.audioObj.duration && this.shuffle == true){
           var randSong = this.files[Math.floor(Math.random() * this.files.length)].url;
           this.openFile(randSong)
         }
-
-        
+        // shuffle is off
+        else if(this.audioObj.currentTime == this.audioObj.duration && this.shuffle == false){
+          this.openFile(this.files[this.index].url);
+        }
       }
 
       this.addEvent(this.audioObj, this.audioEvents, handler);
@@ -137,8 +159,8 @@ export class AppComponent {
     this.audioObj.currentTime = ev.target.value;
   }
 
+
+
 }
-function file(file: any, arg1: (any: any) => void) {
-  throw new Error('Function not implemented.');
-}
+
 

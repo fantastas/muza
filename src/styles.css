@@ -37,3 +37,13 @@ ul {
     top: 0.1rem;
     margin-right: 0.2rem;
   }
+
+ .red{
+   background-color: red;
+ }
+ .normal{
+   background-color: white;
+ }
+ button{
+   background-color: white;
+ }
