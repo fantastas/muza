@@ -51,6 +51,7 @@ export class AppComponent {
   fileName: string= '';
   shuffle = false;
   index = 0;
+  prevIndex=0;
 
   
 
@@ -72,7 +73,19 @@ export class AppComponent {
     this.audioObj.currentTime = 0;
   }
 
+  prevTack(){
+    this.openFile(this.files[this.prevIndex-1].url);
+
+  }
+
+  nextTrack(){
+    this.openFile(this.files[this.prevIndex+1].url);
+
+  }
+
   openFile(url:any){
+    this.prevIndex = this.files.findIndex(x => x.url === url);
+    console.log(this.prevIndex);
     this.streamObserver(url).subscribe(event =>{
 
     });

@@ -22,12 +22,12 @@
         </div>
 
         <div>
-          <button><i class="fa fa-step-backward"></i></button>
+          <button (click)="prevTack()"><i class="fa fa-step-backward"></i></button>
           <button (click)="stop()"><i class="fa fa-stop"></i></button>
 
           <button (click)="pause()"><i class="fa fa-pause"></i></button>
           <button (click)="play()"><i class="fa fa-play"></i></button>
-          <button><i class="fa fa-step-forward"></i></button>
+          <button (click)="nextTrack()"><i class="fa fa-step-forward"></i></button>
           <button [ngClass]="shuffle ? 'red' : 'normal'" (click)="shuffle = !shuffle"><i class="fa fa-random"></i></button>
 
 
