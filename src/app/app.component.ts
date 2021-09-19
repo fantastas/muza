@@ -55,7 +55,11 @@ export class AppComponent {
   
 
   play(){
+    if(this.audioObj.src == ''){
+      this.openFile(this.files[0].url);
+    }else{
     this.audioObj.play();
+    }
    
   }
 
