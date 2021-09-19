@@ -73,16 +73,16 @@ export class AppComponent {
     this.audioObj.pause();
     this.audioObj.currentTime = 0;
   }
+ 
 
+  // need to finish working on the song stack
   prevTack(){
     console.log(this.prevUrl[this.prevUrl.length]);
     this.prevUrl.pop();
     this.openFile(this.prevUrl[this.prevUrl.length-1]);
-
-
-
-  }
-
+ }
+ ////////////////////////////////
+ 
   nextTrack(){
     if(this.shuffle == true){
       var randSong = this.files[Math.floor(Math.random() * this.files.length)].url;
