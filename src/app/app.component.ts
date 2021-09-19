@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { never, Observable } from 'rxjs';
 import * as moment from 'moment';
 
 @Component({
@@ -52,6 +52,7 @@ export class AppComponent {
   shuffle = false;
   index = 0;
   prevIndex=0;
+  prevUrl: any = [];
 
   
 
@@ -74,18 +75,26 @@ export class AppComponent {
   }
 
   prevTack(){
-    this.openFile(this.files[this.prevIndex-1].url);
+    console.log(this.prevUrl[this.prevUrl.length]);
+    this.prevUrl.pop();
+    this.openFile(this.prevUrl[this.prevUrl.length-1]);
+
+
 
   }
 
   nextTrack(){
-    this.openFile(this.files[this.prevIndex+1].url);
-
-  }
+    if(this.shuffle == true){
+      var randSong = this.files[Math.floor(Math.random() * this.files.length)].url;
+      this.openFile(randSong)
+    } 
+    else{this.openFile(this.files[this.prevIndex+1].url);}
+   }
 
   openFile(url:any){
-    this.prevIndex = this.files.findIndex(x => x.url === url);
-    console.log(this.prevIndex);
+    
+    this.prevUrl.push(url);
+    console.log(this.prevUrl);
     this.streamObserver(url).subscribe(event =>{
 
     });
@@ -99,7 +108,7 @@ export class AppComponent {
 
   streamObserver(url:any){
     return new Observable(observer =>{
-      
+      this.prevIndex = this.files.findIndex(x => x.url === url);
       this.audioObj.src = url;
       this.audioObj.load();
       this.audioObj.play();
