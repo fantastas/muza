@@ -8,9 +8,8 @@ import * as moment from 'moment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'muza';
-  
-
+  title = 'Muzika';
+ 
   audioObj = new Audio();
 
   audioEvents = [
@@ -45,21 +44,15 @@ export class AppComponent {
     { url: './assets/07 Embers.mp3', name: '07 Embers.mp3' }
   ]
 
-  
-
-  
-
-  
-  
-
-
   currentTime = '00:00:00';
   duration = '00:00:00';
   seek = 0;
   endseek = 0;
+  fileName: string= '';
 
   play(){
     this.audioObj.play();
+   
   }
 
   pause(){
@@ -89,6 +82,12 @@ export class AppComponent {
       this.audioObj.src = url;
       this.audioObj.load();
       this.audioObj.play();
+      
+      this.files.forEach(element => {
+        if(url == element.url){
+          this.fileName = element.name;
+        }
+      });
 
       const handler = (event: Event) =>{
         // console.log(event);
@@ -96,6 +95,11 @@ export class AppComponent {
         this.endseek = this.audioObj.duration;
         this.duration = this.timeFormat(this.audioObj.duration);
         this.currentTime = this.timeFormat(this.audioObj.currentTime);
+
+        if(this.audioObj.currentTime == this.audioObj.duration){
+          var randSong = this.files[Math.floor(Math.random() * this.files.length)].url;
+          this.openFile(randSong)
+        }
 
         
       }
