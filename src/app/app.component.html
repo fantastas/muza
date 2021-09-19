@@ -1,37 +1,42 @@
-<h1>Mano muzika</h1>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <h1>MUZIKA</h1>
 
 
+<div class="wrapper">
+  <div class="inner">
 
+        <ul>
+          <li *ngFor="let file of files" (click)="openFile(file.url)">{{file.name}}</li>
+        </ul>
 
-<ul>
-  <li *ngFor="let file of files" (click)="openFile(file.url)">{{file.name}}</li>
-</ul>
+        <div>
+          <input type="text" [value]="fileName">
+        </div>
 
-<div>
-  <input type="text" [value]="fileName">
+     
+
+        <div>
+          <span> {{currentTime}} </span>  
+          <input type="range" min="0" max="{{endseek}}" [value]="seek" (input)="setSeekTo($event)">
+          <span> {{duration}} </span>  
+        </div>
+
+        <div>
+          <button (click)="play()"><i class="fa fa-play"></i></button>
+          <button (click)="pause()"><i class="fa fa-pause"></i></button>
+          <button (click)="stop()"><i class="fa fa-stop"></i></button>
+        </div>
+        
+        <div>
+          <span>Garsas</span>
+          <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
+         </div>
+     
+    </div>
 </div>
-
-<div>
-<button (click)="play()">Play</button>
-<button (click)="pause()">Pause</button>
-<button (click)="stop()">Stop</button>
-
-</div>
-
-<div>
-<span> {{currentTime}} </span>  
-<input type="range" min="0" max="{{endseek}}" [value]="seek" (input)="setSeekTo($event)">
-<span> {{duration}} </span>  
-
-</div>
-
 
 
       
 
 
 
-<div>
-  <span>Garsas</span>
-  <input type="range" min="0" max="1" step="0.01" value="0.5" (input)="setVolume($event)">
-</div>
