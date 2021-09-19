@@ -26,16 +26,32 @@ export class AppComponent {
   ];
   
   files = 
-  [{
-    url: './assets/02 Like A Ghost.mp3',
-    name: 'Like A Ghost'
-  },
-  {
-    url: './assets/01 Pulling Every String.mp3',
-    name: 'Pulling Every String'
-  }
+  [
+    {
+      url: './assets/01 Pulling Every String.mp3',
+      name: '01 Pulling Every String.mp3'
+    },
+    { url: './assets/02 Like A Ghost.mp3', name: '02 Like A Ghost.mp3' },
+    {
+      url: './assets/03 Even Without Me.mp3',
+      name: '03 Even Without Me.mp3'
+    },
+    { url: './assets/04 It Was Love.mp3', name: '04 It Was Love.mp3' },
+    {
+      url: './assets/05 Thoughts In My Head.mp3',
+      name: '05 Thoughts In My Head.mp3'
+    },
+    { url: './assets/06 Never Forget.mp3', name: '06 Never Forget.mp3' },
+    { url: './assets/07 Embers.mp3', name: '07 Embers.mp3' }
+  ]
+
   
-  ];
+
+  
+
+  
+  
+
 
   currentTime = '00:00:00';
   duration = '00:00:00';
@@ -118,3 +134,7 @@ export class AppComponent {
   }
 
 }
+function file(file: any, arg1: (any: any) => void) {
+  throw new Error('Function not implemented.');
+}
+
