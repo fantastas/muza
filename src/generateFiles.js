@@ -2,7 +2,6 @@
 // Usage: node generateFiles.js 
 // Copy output in app.module.ts files array
 
-const path = require('path');
 const fs = require('fs');
 fileArr = [];
 fs.readdir('./assets', function (err, files) {
