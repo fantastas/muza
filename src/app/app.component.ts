@@ -108,6 +108,7 @@ export class AppComponent {
 
   streamObserver(url:any){
     return new Observable(observer =>{
+      
       this.prevIndex = this.files.findIndex(x => x.url === url);
       this.audioObj.src = url;
       this.audioObj.load();
@@ -130,6 +131,7 @@ export class AppComponent {
         i++;
       });
       
+      // make sure player plays after the last song in the list
       if(this.index == this.files.length){
         this.index = 0;
       }
