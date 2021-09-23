@@ -24,28 +24,33 @@ export class AppComponent {
      "loadstart"
   ];
   
-  files = 
-  [
-    {
-      url: './assets/01 Pulling Every String.mp3',
-      name: '01 Pulling Every String.mp3'
-    },
-    { url: './assets/02 Like A Ghost.mp3', name: '02 Like A Ghost.mp3' },
-    {
-      url: './assets/03 Even Without Me.mp3',
-      name: '03 Even Without Me.mp3'
-    },
-    { url: './assets/04 It Was Love.mp3', name: '04 It Was Love.mp3' },
-    {
-      url: './assets/05 Thoughts In My Head.mp3',
-      name: '05 Thoughts In My Head.mp3'
-    },
-    { url: './assets/06 Never Forget.mp3', name: '06 Never Forget.mp3' },
-    { url: './assets/07 Embers.mp3', name: '07 Embers.mp3' }
-  ]
+ files = 
+[
+  { url: './assets/Hipis & D&B .mp3', name: 'Hipis & D&B .mp3' },
+  { url: './assets/Noizas.mp3', name: 'Noizas.mp3' },
+  { url: './assets/Teisuolis.mp3', name: 'Teisuolis.mp3' },
+  { url: './assets/atvirukass.mp3', name: 'atvirukass.mp3' },
+  { url: './assets/dviratis.mp3', name: 'dviratis.mp3' },
+  { url: './assets/ezeras.mp3', name: 'ezeras.mp3' },
+  { url: './assets/grazuolis.mp3', name: 'grazuolis.mp3' },
+  { url: './assets/jogos pozoj.mp3', name: 'jogos pozoj.mp3' },
+  { url: './assets/lietaus lasai.mp3', name: 'lietaus lasai.mp3' },
+  { url: './assets/logika.mp3', name: 'logika.mp3' },
+  { url: './assets/open air .mp3', name: 'open air .mp3' },
+  { url: './assets/paukstis .mp3', name: 'paukstis .mp3' },
+  { url: './assets/pofik.mp3', name: 'pofik.mp3' },
+  { url: './assets/prerisju suo.mp3', name: 'prerisju suo.mp3' },
+  { url: './assets/radijas .mp3', name: 'radijas .mp3' },
+  { url: './assets/rusiska .mp3', name: 'rusiska .mp3' },
+  { url: './assets/tau .mp3', name: 'tau .mp3' },
+  { url: './assets/virdulys.mp3', name: 'virdulys.mp3' }
+]
 
-  currentTime = '00:00:00';
-  duration = '00:00:00';
+  // currentTime = '00:00:00';
+  // duration = '00:00:00';
+  currentTime = '';
+  duration = '00: 00: 00';
+
   seek = 0;
   endseek = 0;
   fileName: string= '';
@@ -53,7 +58,6 @@ export class AppComponent {
   index = 0;
   prevIndex=0;
   prevUrl: any = [];
-
   
 
   play(){
@@ -108,11 +112,11 @@ export class AppComponent {
 
   streamObserver(url:any){
     return new Observable(observer =>{
-      
-      this.prevIndex = this.files.findIndex(x => x.url === url);
       this.audioObj.src = url;
       this.audioObj.load();
       this.audioObj.play();
+      this.prevIndex = this.files.findIndex(x => x.url === url);
+    
       
       // current song loop
       this.files.forEach(element => {
@@ -140,8 +144,11 @@ export class AppComponent {
         // console.log(event);
         this.seek = this.audioObj.currentTime;
         this.endseek = this.audioObj.duration;
-        this.duration = this.timeFormat(this.audioObj.duration);
-        this.currentTime = this.timeFormat(this.audioObj.currentTime);
+
+        // this.duration = this.timeFormat(this.audioObj.duration);
+        // this.currentTime = this.timeFormat(this.audioObj.currentTime);
+        this.duration = this.timeFunction(this.audioObj.duration);
+        this.currentTime = this.timeFunction(this.audioObj.currentTime);
 
         // shufle is on
         if(this.audioObj.currentTime == this.audioObj.duration && this.shuffle == true){
@@ -158,7 +165,7 @@ export class AppComponent {
 
       return () => {
         this.audioObj.pause();
-        this.audioObj.currentTime =0;
+        this.audioObj.currentTime = 0;
         this.removeEvent(this.audioObj, this.audioEvents, handler);
       }
     })
@@ -177,16 +184,28 @@ export class AppComponent {
     });
   }
 
-  timeFormat(time:any, format="HH:mm:ss"){
-    const momentTime = time * 1000;
-    return moment.utc(momentTime).format(format);
+  // timeFormat(time:any, format="HH:mm:ss"){
+  //   const momentTime = time * 1000;
+  //   return moment.utc(momentTime).format(format);
 
+  // }
+
+  timeFunction(time: any){
+    var seconds = Math.floor(time);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+    seconds = Math.floor(time) - minutes * 60;
+    
+    if(minutes < 10 && seconds < 10) { return '0' + hours + ':0' + minutes + ':0' + seconds;}
+      else if (seconds < 10)         { return '0' + hours + ':' + minutes + ':0' + seconds; }
+      else if(minutes < 10)          { return '0' + hours + ':0' + minutes + ':' + seconds; }
+      else                           { return  hours + ':' + minutes + ':' + seconds; }
   }
 
   setSeekTo(ev:any){
     this.audioObj.currentTime = ev.target.value;
   }
-
+  
 
 
 }
