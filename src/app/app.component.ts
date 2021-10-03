@@ -26,24 +26,63 @@ export class AppComponent {
   
  files = 
 [
-  { url: './assets/Hipis & D&B .mp3', name: 'Hipis & D&B .mp3' },
-  { url: './assets/Noizas.mp3', name: 'Noizas.mp3' },
-  { url: './assets/Teisuolis.mp3', name: 'Teisuolis.mp3' },
-  { url: './assets/atvirukass.mp3', name: 'atvirukass.mp3' },
-  { url: './assets/dviratis.mp3', name: 'dviratis.mp3' },
-  { url: './assets/ezeras.mp3', name: 'ezeras.mp3' },
-  { url: './assets/grazuolis.mp3', name: 'grazuolis.mp3' },
-  { url: './assets/jogos pozoj.mp3', name: 'jogos pozoj.mp3' },
-  { url: './assets/lietaus lasai.mp3', name: 'lietaus lasai.mp3' },
-  { url: './assets/logika.mp3', name: 'logika.mp3' },
-  { url: './assets/open air .mp3', name: 'open air .mp3' },
-  { url: './assets/paukstis .mp3', name: 'paukstis .mp3' },
-  { url: './assets/pofik.mp3', name: 'pofik.mp3' },
-  { url: './assets/prerisju suo.mp3', name: 'prerisju suo.mp3' },
-  { url: './assets/radijas .mp3', name: 'radijas .mp3' },
-  { url: './assets/rusiska .mp3', name: 'rusiska .mp3' },
-  { url: './assets/tau .mp3', name: 'tau .mp3' },
-  { url: './assets/virdulys.mp3', name: 'virdulys.mp3' }
+  { url: './assets/01 Losing It.mp3', name: '01 Losing It.mp3' },
+  { url: './assets/01 Lucky Penny.mp3', name: '01 Lucky Penny.mp3' },
+  {
+    url: './assets/01 Pulling Every String.mp3',
+    name: '01 Pulling Every String.mp3'
+  },
+  {
+    url: './assets/02 House Of Dreams.mp3',
+    name: '02 House Of Dreams.mp3'
+  },
+  { url: './assets/02 Like A Ghost.mp3', name: '02 Like A Ghost.mp3' },
+  { url: './assets/02 The Base.mp3', name: '02 The Base.mp3' },
+  {
+    url: './assets/03 All That Blue.mp3',
+    name: '03 All That Blue.mp3'
+  },
+  { url: './assets/03 Dusk.mp3', name: '03 Dusk.mp3' },
+  { url: './assets/04 Under Ufo.mp3', name: '04 Under Ufo.mp3' },
+  { url: './assets/05 Lifting You.mp3', name: '05 Lifting You.mp3' },
+  { url: './assets/05 On a High.mp3', name: '05 On a High.mp3' },
+  {
+    url: './assets/05 The People Groove.mp3',
+    name: '05 The People Groove.mp3'
+  },
+  {
+    url: './assets/05 Thread Count (feat. Guilty Simpson).mp3',
+    name: '05 Thread Count (feat. Guilty Simpson).mp3'
+  },
+  {
+    url: './assets/06 Looking Glass.mp3',
+    name: '06 Looking Glass.mp3'
+  },
+  { url: './assets/06 Take It Slow.mp3', name: '06 Take It Slow.mp3' },
+  { url: './assets/06 double Tap.mp3', name: '06 double Tap.mp3' },
+  { url: './assets/07 Boileau.mp3', name: '07 Boileau.mp3' },
+  { url: './assets/07 Instant Life.mp3', name: '07 Instant Life.mp3' },
+  {
+    url: './assets/08 Can We Go Back.mp3',
+    name: '08 Can We Go Back.mp3'
+  },
+  { url: './assets/08 Italobingo.mp3', name: '08 Italobingo.mp3' },
+  { url: './assets/1-02 Motorbike.mp3', name: '1-02 Motorbike.mp3' },
+  {
+    url: './assets/1-08 Under Control.mp3',
+    name: '1-08 Under Control.mp3'
+  },
+  { url: './assets/1-11 Blue Mesas.mp3', name: '1-11 Blue Mesas.mp3' },
+  {
+    url: './assets/10 Ante Meridiem.mp3',
+    name: '10 Ante Meridiem.mp3'
+  },
+  {
+    url: './assets/11 the drift _ resist.mp3',
+    name: '11 the drift _ resist.mp3'
+  },
+  { url: './assets/15 blu.mp3', name: '15 blu.mp3' },
+  { url: './assets/17 800 minutes.mp3', name: '17 800 minutes.mp3' }
 ]
 
   // currentTime = '00:00:00';
