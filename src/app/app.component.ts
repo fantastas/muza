@@ -29,19 +29,10 @@ files =
   { url: './assets/01 Losing It.mp3', name: '01 Losing It.mp3' },
   { url: './assets/01 Lucky Penny.mp3', name: '01 Lucky Penny.mp3' },
   {
-    url: './assets/01 Pulling Every String.mp3',
-    name: '01 Pulling Every String.mp3'
-  },
-  {
     url: './assets/02 House Of Dreams.mp3',
     name: '02 House Of Dreams.mp3'
   },
   { url: './assets/02 Like A Ghost.mp3', name: '02 Like A Ghost.mp3' },
-  { url: './assets/02 The Base.mp3', name: '02 The Base.mp3' },
-  {
-    url: './assets/03 All That Blue.mp3',
-    name: '03 All That Blue.mp3'
-  },
   { url: './assets/04 Under Ufo.mp3', name: '04 Under Ufo.mp3' },
   { url: './assets/05 Lifting You.mp3', name: '05 Lifting You.mp3' },
   { url: './assets/05 On a High.mp3', name: '05 On a High.mp3' },
