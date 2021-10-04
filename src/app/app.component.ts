@@ -24,7 +24,7 @@ export class AppComponent {
      "loadstart"
   ];
   
- files = 
+files = 
 [
   { url: './assets/01 Losing It.mp3', name: '01 Losing It.mp3' },
   { url: './assets/01 Lucky Penny.mp3', name: '01 Lucky Penny.mp3' },
@@ -42,17 +42,12 @@ export class AppComponent {
     url: './assets/03 All That Blue.mp3',
     name: '03 All That Blue.mp3'
   },
-  { url: './assets/03 Dusk.mp3', name: '03 Dusk.mp3' },
   { url: './assets/04 Under Ufo.mp3', name: '04 Under Ufo.mp3' },
   { url: './assets/05 Lifting You.mp3', name: '05 Lifting You.mp3' },
   { url: './assets/05 On a High.mp3', name: '05 On a High.mp3' },
   {
     url: './assets/05 The People Groove.mp3',
     name: '05 The People Groove.mp3'
-  },
-  {
-    url: './assets/05 Thread Count (feat. Guilty Simpson).mp3',
-    name: '05 Thread Count (feat. Guilty Simpson).mp3'
   },
   {
     url: './assets/06 Looking Glass.mp3',
@@ -83,7 +78,7 @@ export class AppComponent {
   },
   { url: './assets/15 blu.mp3', name: '15 blu.mp3' },
   { url: './assets/17 800 minutes.mp3', name: '17 800 minutes.mp3' }
-]
+];
 
   // currentTime = '00:00:00';
   // duration = '00:00:00';
