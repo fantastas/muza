@@ -24,60 +24,72 @@ export class AppComponent {
      "loadstart"
   ];
   
-files = 
-[
-  { url: './assets/01 Losing It.mp3', name: '01 Losing It.mp3' },
-  { url: './assets/01 Lucky Penny.mp3', name: '01 Lucky Penny.mp3' },
-  {
-    url: './assets/02 Californian Soil.mp3',
-    name: '02 Californian Soil.mp3'
-  },
-  {
-    url: './assets/02 House Of Dreams.mp3',
-    name: '02 House Of Dreams.mp3'
-  },
-  { url: './assets/02 Like A Ghost.mp3', name: '02 Like A Ghost.mp3' },
-  { url: './assets/02 Lua Bonita.mp3', name: '02 Lua Bonita.mp3' },
-  {
-    url: './assets/02 Ça sulfite !! (Censurée).mp3',
-    name: '02 Ça sulfite !! (Censurée).mp3'
-  },
-  { url: './assets/03 Animal.mp3', name: '03 Animal.mp3' },
-  { url: './assets/04 Under Ufo.mp3', name: '04 Under Ufo.mp3' },
-  {
-    url: './assets/05 The People Groove.mp3',
-    name: '05 The People Groove.mp3'
-  },
-  { url: './assets/06 Take It Slow.mp3', name: '06 Take It Slow.mp3' },
-  { url: './assets/06 double Tap.mp3', name: '06 double Tap.mp3' },
-  { url: './assets/07 Boileau.mp3', name: '07 Boileau.mp3' },
-  { url: './assets/07 Instant Life.mp3', name: '07 Instant Life.mp3' },
-  {
-    url: './assets/08 Can We Go Back.mp3',
-    name: '08 Can We Go Back.mp3'
-  },
-  { url: './assets/08 Italobingo.mp3', name: '08 Italobingo.mp3' },
-  {
-    url: './assets/1-08 Under Control.mp3',
-    name: '1-08 Under Control.mp3'
-  },
-  { url: './assets/1-11 Blue Mesas.mp3', name: '1-11 Blue Mesas.mp3' },
-  {
-    url: './assets/10 Ante Meridiem.mp3',
-    name: '10 Ante Meridiem.mp3'
-  },
-  {
-    url: './assets/11 the drift _ resist.mp3',
-    name: '11 the drift _ resist.mp3'
-  },
-  {
-    url: "./assets/12 Daughter Callin' (Feat. Pink Siifu).mp3",
-    name: "12 Daughter Callin' (Feat. Pink Siifu).mp3"
-  },
-  { url: './assets/15 blu.mp3', name: '15 blu.mp3' },
-  { url: './assets/17 800 minutes.mp3', name: '17 800 minutes.mp3' }
-];
-
+  files = 
+  [
+    { url: './assets/01 Losing It.mp3', name: '01 Losing It.mp3' },
+    { url: './assets/01 Lucky Penny.mp3', name: '01 Lucky Penny.mp3' },
+    {
+      url: './assets/02 Californian Soil.mp3',
+      name: '02 Californian Soil.mp3'
+    },
+    {
+      url: './assets/02 House Of Dreams.mp3',
+      name: '02 House Of Dreams.mp3'
+    },
+    { url: './assets/02 Like A Ghost.mp3', name: '02 Like A Ghost.mp3' },
+    { url: './assets/02 Lua Bonita.mp3', name: '02 Lua Bonita.mp3' },
+    {
+      url: './assets/02 Ça sulfite !! (Censurée).mp3',
+      name: '02 Ça sulfite !! (Censurée).mp3'
+    },
+    { url: './assets/03 Animal.mp3', name: '03 Animal.mp3' },
+    { url: './assets/04 Under Ufo.mp3', name: '04 Under Ufo.mp3' },
+    {
+      url: './assets/05 The People Groove.mp3',
+      name: '05 The People Groove.mp3'
+    },
+    { url: './assets/06 Take It Slow.mp3', name: '06 Take It Slow.mp3' },
+    { url: './assets/06 double Tap.mp3', name: '06 double Tap.mp3' },
+    {
+      url: './assets/06. Looking Glass.mp3',
+      name: '06. Looking Glass.mp3'
+    },
+    { url: './assets/07 Boileau.mp3', name: '07 Boileau.mp3' },
+    { url: './assets/07 Instant Life.mp3', name: '07 Instant Life.mp3' },
+    {
+      url: './assets/08 Can We Go Back.mp3',
+      name: '08 Can We Go Back.mp3'
+    },
+    { url: './assets/08 Italobingo.mp3', name: '08 Italobingo.mp3' },
+    {
+      url: './assets/1-01 nowhere, man.mp3',
+      name: '1-01 nowhere, man.mp3'
+    },
+    {
+      url: './assets/1-08 Passing Through.mp3',
+      name: '1-08 Passing Through.mp3'
+    },
+    {
+      url: './assets/1-08 Under Control.mp3',
+      name: '1-08 Under Control.mp3'
+    },
+    { url: './assets/1-11 Blue Mesas.mp3', name: '1-11 Blue Mesas.mp3' },
+    { url: './assets/1-12 Shakedown.mp3', name: '1-12 Shakedown.mp3' },
+    {
+      url: './assets/10 Ante Meridiem.mp3',
+      name: '10 Ante Meridiem.mp3'
+    },
+    {
+      url: './assets/11 the drift _ resist.mp3',
+      name: '11 the drift _ resist.mp3'
+    },
+    {
+      url: "./assets/12 Daughter Callin' (Feat. Pink Siifu).mp3",
+      name: "12 Daughter Callin' (Feat. Pink Siifu).mp3"
+    },
+    { url: './assets/15 blu.mp3', name: '15 blu.mp3' },
+    { url: './assets/17 800 minutes.mp3', name: '17 800 minutes.mp3' }
+  ]
   // currentTime = '00:00:00';
   // duration = '00:00:00';
   currentTime = '';
